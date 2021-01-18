@@ -22,10 +22,29 @@ namespace Horoscopo
 
             //Act=Ejecución
 
-            string resultado = Hor.HoroscopoGet(dia, mes);
+            string resultado = Hor.HoroscopoGet(dia,mes);
 
             //Assert=Verificación
-            Assert.AreEqual(esperado, resultado);
+            Assert.AreEqual(esperado,resultado);
+
+        }
+
+        [Test]
+        public void TestHPost()
+        {
+            //Arange=Preparación
+            int dia = 16;
+            int mes = 10;
+            string esperado = "Libra: Para Libra el 2021 será un año lleno de cambios que requerirán incluso un tiempo de mudanza. ";
+
+            HoroscopoController Hor = new HoroscopoController();
+
+            //Act=Ejecución
+
+            string resultado = Hor.HoroscopoPost(dia,mes);
+
+            //Assert=Verificación
+            Assert.AreEqual(esperado,resultado);
 
         }
 
